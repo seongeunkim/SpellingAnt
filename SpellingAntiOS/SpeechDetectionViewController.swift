@@ -2,8 +2,8 @@
 //  SpeechDetectionViewController.swift
 //  Speech-Recognition-Demo
 //
-//  Created by Jennifer A Sipila on 3/3/17.
-//  Copyright © 2017 Jennifer A Sipila. All rights reserved.
+//  Created by Seong Eun Kim on 11/05/17.
+//  Copyright © 2018 Seong Eun Kim. All rights reserved.
 //
 
 import UIKit
