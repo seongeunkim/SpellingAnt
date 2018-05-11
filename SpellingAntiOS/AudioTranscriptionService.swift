@@ -1,9 +1,9 @@
 //
 //  AudioTranscriptionService.swift
-//  Speech-Recognition-Demo
+//  SpellingAntiOS
 //
 //  Created by Seong Eun Kim on 11/05/18.
-//  Copyright © 2018 Jennifer A Sipila. All rights reserved.
+//  Copyright © 2018 Seong Eun Kim. All rights reserved.
 //
 
 import Foundation
