@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class SpeechDetectionViewController: UIViewController {
 
@@ -24,7 +25,7 @@ class SpeechDetectionViewController: UIViewController {
     var progress = KDCircularProgress()
     
     var timer = Timer()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.requestSpeechAuthorization()
@@ -56,6 +57,7 @@ class SpeechDetectionViewController: UIViewController {
     
 //MARK: IBActions and Cancel
     @IBAction func startButtonTapped(_ sender: UIButton) {
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         if isRecording == true {
             timer.invalidate()
             speechButton.setImage(#imageLiteral(resourceName: "Ditation"), for: .normal)
