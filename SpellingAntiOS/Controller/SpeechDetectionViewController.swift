@@ -13,6 +13,7 @@ class SpeechDetectionViewController: UIViewController {
     @IBOutlet weak var detectedTextLabel: UILabel!
     @IBOutlet weak var speechButton: UIButton!
     @IBOutlet weak var listeningFeedback: UILabel!
+    @IBOutlet weak var beeImage: UIImageView!
     
     var isRecording = false
     
@@ -22,12 +23,19 @@ class SpeechDetectionViewController: UIViewController {
     
     var progress = KDCircularProgress()
     
+    var timer = Timer()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.requestSpeechAuthorization()
+    }
+    
+    @objc func addPulse(){
+        let pulse = Pulsing(numberOfPulses: 1, radius: 150, position: beeImage.center)
+        pulse.animationDuration = 0.8
+        pulse.backgroundColor = UIColor.orange.cgColor
         
-        //self.initProgressCircle()
-        //progress.animate(toAngle: 360, duration: 10, completion: nil)
+        self.view.layer.insertSublayer(pulse, below: beeImage.layer)
     }
     
     func initProgressCircle(){
@@ -49,11 +57,13 @@ class SpeechDetectionViewController: UIViewController {
 //MARK: IBActions and Cancel
     @IBAction func startButtonTapped(_ sender: UIButton) {
         if isRecording == true {
+            timer.invalidate()
             speechButton.setImage(#imageLiteral(resourceName: "Ditation"), for: .normal)
             isRecording = false
             audioTranscriptionService.cancelRecording()
             listeningFeedback.text = "Tap button to start voice recognition!"
         } else {
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(SpeechDetectionViewController.addPulse), userInfo: nil, repeats: true)
             speechButton.setImage(#imageLiteral(resourceName: "Ditation-selected"), for: .normal)
             isRecording = true
             listeningFeedback.text = "LISTENING"
@@ -63,6 +73,8 @@ class SpeechDetectionViewController: UIViewController {
             })
         }
     }
+    
+    
     
 //MARK: - Check Authorization Status
 

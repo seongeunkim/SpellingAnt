@@ -16,6 +16,7 @@
 		126BF46B20A5D3D600F5FBFA /* SpeechDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126BF46920A5D3D500F5FBFA /* SpeechDetectionViewController.swift */; };
 		126BF46D20A5D9E000F5FBFA /* MultipeerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126BF46C20A5D9DF00F5FBFA /* MultipeerService.swift */; };
 		CBC8242720AB3CB70045B83C /* KDCIrcularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC8242620AB3CB70045B83C /* KDCIrcularProgress.swift */; };
+		CBC8242A20AB58800045B83C /* Pulsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC8242920AB58800045B83C /* Pulsing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		126BF46920A5D3D500F5FBFA /* SpeechDetectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechDetectionViewController.swift; sourceTree = "<group>"; };
 		126BF46C20A5D9DF00F5FBFA /* MultipeerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipeerService.swift; sourceTree = "<group>"; };
 		CBC8242620AB3CB70045B83C /* KDCIrcularProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDCIrcularProgress.swift; sourceTree = "<group>"; };
+		CBC8242920AB58800045B83C /* Pulsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pulsing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				CBC8242620AB3CB70045B83C /* KDCIrcularProgress.swift */,
+				CBC8242920AB58800045B83C /* Pulsing.swift */,
 				CBC8242820AB3CCF0045B83C /* Storyboard */,
 			);
 			path = View;
@@ -188,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBC8242A20AB58800045B83C /* Pulsing.swift in Sources */,
 				126BF46B20A5D3D600F5FBFA /* SpeechDetectionViewController.swift in Sources */,
 				126BF46A20A5D3D600F5FBFA /* AudioTranscriptionService.swift in Sources */,
 				CBC8242720AB3CB70045B83C /* KDCIrcularProgress.swift in Sources */,
