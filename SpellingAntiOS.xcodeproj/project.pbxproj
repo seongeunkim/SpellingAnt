@@ -60,17 +60,49 @@
 		126BF45220A5D31E00F5FBFA /* SpellingAntiOS */ = {
 			isa = PBXGroup;
 			children = (
-				126BF46C20A5D9DF00F5FBFA /* MultipeerService.swift */,
-				126BF46820A5D3D500F5FBFA /* AudioTranscriptionService.swift */,
-				126BF46920A5D3D500F5FBFA /* SpeechDetectionViewController.swift */,
 				126BF45320A5D31E00F5FBFA /* AppDelegate.swift */,
-				126BF45720A5D31E00F5FBFA /* Main.storyboard */,
 				126BF45D20A5D31E00F5FBFA /* Assets.xcassets */,
-				126BF45F20A5D31E00F5FBFA /* LaunchScreen.storyboard */,
 				126BF46220A5D31E00F5FBFA /* Info.plist */,
 				126BF45A20A5D31E00F5FBFA /* SpellingAntiOS.xcdatamodeld */,
+				CBC8242320AB3A4D0045B83C /* Model */,
+				CBC8242420AB3A570045B83C /* View */,
+				CBC8242520AB3A630045B83C /* Controller */,
 			);
 			path = SpellingAntiOS;
+			sourceTree = "<group>";
+		};
+		CBC8242220AB3A430045B83C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				126BF46C20A5D9DF00F5FBFA /* MultipeerService.swift */,
+				126BF46820A5D3D500F5FBFA /* AudioTranscriptionService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CBC8242320AB3A4D0045B83C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CBC8242220AB3A430045B83C /* Services */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CBC8242420AB3A570045B83C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				126BF45720A5D31E00F5FBFA /* Main.storyboard */,
+				126BF45F20A5D31E00F5FBFA /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CBC8242520AB3A630045B83C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				126BF46920A5D3D500F5FBFA /* SpeechDetectionViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
