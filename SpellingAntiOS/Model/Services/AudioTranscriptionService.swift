@@ -29,7 +29,6 @@ class AudioTranscriptionService: NSObject, SFSpeechRecognizerDelegate {
         }
     }
     
-    
     fileprivate func startAudioEngine() {
         audioEngine.prepare()
         do {
@@ -65,7 +64,7 @@ class AudioTranscriptionService: NSObject, SFSpeechRecognizerDelegate {
                     var lastString: String = ""
                     for segment in result.bestTranscription.segments {
                         let indexTo = bestString.index(bestString.startIndex, offsetBy: segment.substringRange.location)
-                        lastString = bestString.substring(from: indexTo)
+                        lastString = String(bestString[..<indexTo])
                     }
                 } else if let error = error {
                     self.sendAlert(message: "There has been a speech recognition error.")
@@ -73,8 +72,6 @@ class AudioTranscriptionService: NSObject, SFSpeechRecognizerDelegate {
                 }
             }
         })
-        
-        
     }
     
     func recordAndRecognizeSpeech(completion: @escaping(String) -> ()) {
