@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Speech Detection View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SpeechDetectionViewController" customModule="SpellingAntiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap button to start voice recognition!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dY-bZ-5TA">
+                                <rect key="frame" x="44" y="55" width="286" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1z8-1k-eic">
+                                <rect key="frame" x="19" y="183.5" width="337.5" height="266.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZSE-FK-UvF">
+                                <rect key="frame" x="157" y="554" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Ditation"/>
+                                <connections>
+                                    <action selector="startButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KA2-l4-OtR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5dY-bZ-5TA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TfI-aO-8Hr"/>
+                            <constraint firstItem="1z8-1k-eic" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="ads-vV-OYV"/>
+                            <constraint firstItem="1z8-1k-eic" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cyD-Ih-anf"/>
+                            <constraint firstItem="1z8-1k-eic" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="h3r-ND-LH5"/>
+                            <constraint firstItem="1z8-1k-eic" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.95" id="kcy-a4-BC5"/>
+                            <constraint firstItem="5dY-bZ-5TA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.2" id="yIA-u4-8Mw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detectedTextLabel" destination="1z8-1k-eic" id="sxV-98-B5P"/>
+                        <outlet property="listeningFeedback" destination="5dY-bZ-5TA" id="UHk-3R-FC4"/>
+                        <outlet property="speechButton" destination="ZSE-FK-UvF" id="NpX-CS-QtS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141.59999999999999" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Ditation" width="60" height="60"/>
+    </resources>
+</document>
