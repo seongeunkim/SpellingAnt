@@ -13,7 +13,7 @@ class AudioTranscriptionService: NSObject, SFSpeechRecognizerDelegate {
     
     let audioEngine = AVAudioEngine()
     let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()
-    let request = SFSpeechAudioBufferRecognitionRequest()
+    var request = SFSpeechAudioBufferRecognitionRequest()
     var recognitionTask: SFSpeechRecognitionTask?
     
     //MARK: - Recognize Speech
@@ -30,6 +30,8 @@ class AudioTranscriptionService: NSObject, SFSpeechRecognizerDelegate {
     }
     
     fileprivate func startAudioEngine() {
+        request = SFSpeechAudioBufferRecognitionRequest()
+        request.taskHint = SFSpeechRecognitionTaskHint.dictation
         audioEngine.prepare()
         do {
             try audioEngine.start()
@@ -81,7 +83,9 @@ class AudioTranscriptionService: NSObject, SFSpeechRecognizerDelegate {
             recognitionTask.cancel()
             self.recognitionTask = nil
         }
-        
+        // Configure request so that results are returned before audio recording is finished
+        request.shouldReportPartialResults = true
+
         self.bufferizeAudio()
         
         self.startAudioEngine()

@@ -43,6 +43,10 @@
                                     <action selector="startButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KA2-l4-OtR"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bee mic" translatesAutoresizingMaskIntoConstraints="NO" id="Ed1-pk-jPw">
+                                <rect key="frame" x="124" y="250" width="127" height="132"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -55,6 +59,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="beeImage" destination="Ed1-pk-jPw" id="qGe-iW-4Ai"/>
                         <outlet property="detectedTextLabel" destination="1z8-1k-eic" id="sxV-98-B5P"/>
                         <outlet property="listeningFeedback" destination="5dY-bZ-5TA" id="UHk-3R-FC4"/>
                         <outlet property="speechButton" destination="ZSE-FK-UvF" id="NpX-CS-QtS"/>
@@ -67,5 +72,6 @@
     </scenes>
     <resources>
         <image name="Ditation" width="60" height="60"/>
+        <image name="bee mic" width="150" height="156"/>
     </resources>
 </document>
