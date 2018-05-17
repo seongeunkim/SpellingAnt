@@ -48,12 +48,12 @@ class MultipeerService:NSObject {
     
     var delegate : MultipeerDelegate?
     
-    func send(colorName : String) {
+    func send(message : String) {
         NSLog("%@", "sendText: text test to \(session.connectedPeers.count) peers")
         
         if session.connectedPeers.count > 0 {
             do {
-                try self.session.send(colorName.data(using: .utf8)!, toPeers: session.connectedPeers, with: .reliable)
+                try self.session.send(message.data(using: .utf8)!, toPeers: session.connectedPeers, with: .reliable)
             }
             catch let error {
                 NSLog("%@", "Error for sending: \(error)")

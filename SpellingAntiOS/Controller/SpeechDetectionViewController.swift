@@ -71,11 +71,18 @@ class SpeechDetectionViewController: UIViewController {
             listeningFeedback.text = "LISTENING"
             audioTranscriptionService.recordAndRecognizeSpeech(completion: { finalString in
                 self.detectedTextLabel.text = finalString
-                self.multipeerService.send(colorName: finalString)
+                self.multipeerService.send(message: finalString)
             })
         }
     }
     
+    @IBAction func hintButton(_ sender: Any) {
+        self.multipeerService.send(message: "HINT_BUTTON")
+    }
+    
+    @IBAction func repeatButton(_ sender: Any) {
+        self.multipeerService.send(message: "REPEAT_BUTTON")
+    }
     
     
 //MARK: - Check Authorization Status

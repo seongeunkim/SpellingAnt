@@ -44,9 +44,25 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bee mic" translatesAutoresizingMaskIntoConstraints="NO" id="Ed1-pk-jPw">
-                                <rect key="frame" x="124" y="250" width="127" height="132"/>
+                                <rect key="frame" x="124" y="267" width="127" height="132"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2X-UG-xJK">
+                                <rect key="frame" x="78" y="143" width="66" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="hint"/>
+                                <connections>
+                                    <action selector="hintButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cz3-o9-EbX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqJ-ht-nQO">
+                                <rect key="frame" x="230" y="143" width="67" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="repeat"/>
+                                <connections>
+                                    <action selector="repeatButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lyy-74-ru4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -73,5 +89,7 @@
     <resources>
         <image name="Ditation" width="60" height="60"/>
         <image name="bee mic" width="150" height="156"/>
+        <image name="hint" width="60" height="76"/>
+        <image name="repeat" width="60" height="76"/>
     </resources>
 </document>
