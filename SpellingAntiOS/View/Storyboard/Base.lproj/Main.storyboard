@@ -41,6 +41,7 @@
                                 <state key="normal" title="Button" image="Ditation"/>
                                 <connections>
                                     <action selector="startButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KA2-l4-OtR"/>
+                                    <action selector="stopButtonTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="FSW-lr-JS3"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bee mic" translatesAutoresizingMaskIntoConstraints="NO" id="Ed1-pk-jPw">
