@@ -60,6 +60,10 @@ class AudioTranscriptionService: NSObject, SFSpeechRecognizerDelegate {
             if result != nil {
                 if let result = result {
                     
+                    for transcription in result.transcriptions{
+                        print(transcription.formattedString)
+                    }
+                    
                     let bestString = result.bestTranscription.formattedString
                     completion(bestString)
                     
