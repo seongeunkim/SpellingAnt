@@ -56,24 +56,29 @@ class SpeechDetectionViewController: UIViewController {
     }
     
 //MARK: IBActions and Cancel
+    
+    @IBAction func stopButtonTapped(_ sender: Any) {
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(SpeechDetectionViewController.addPulse), userInfo: nil, repeats: true)
+        speechButton.setImage(#imageLiteral(resourceName: "Ditation-selected"), for: .normal)
+        isRecording = true
+        listeningFeedback.text = "LISTENING"
+        audioTranscriptionService.recordAndRecognizeSpeech(completion: { finalString in
+            self.detectedTextLabel.text = finalString
+            self.multipeerService.send(message: finalString)
+        })
+        
+    }
+    
     @IBAction func startButtonTapped(_ sender: UIButton) {
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        if isRecording == true {
-            timer.invalidate()
-            speechButton.setImage(#imageLiteral(resourceName: "Ditation"), for: .normal)
-            isRecording = false
-            audioTranscriptionService.cancelRecording()
-            listeningFeedback.text = "Tap button to start voice recognition!"
-        } else {
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(SpeechDetectionViewController.addPulse), userInfo: nil, repeats: true)
-            speechButton.setImage(#imageLiteral(resourceName: "Ditation-selected"), for: .normal)
-            isRecording = true
-            listeningFeedback.text = "LISTENING"
-            audioTranscriptionService.recordAndRecognizeSpeech(completion: { finalString in
-                self.detectedTextLabel.text = finalString
-                self.multipeerService.send(message: finalString)
-            })
-        }
+        timer.invalidate()
+        speechButton.setImage(#imageLiteral(resourceName: "Ditation"), for: .normal)
+        isRecording = false
+        audioTranscriptionService.cancelRecording()
+        listeningFeedback.text = "Tap button to start voice recognition!"
+        
+        self.multipeerService.send(message: "END_OF_SPEECH")
     }
     
     @IBAction func hintButton(_ sender: Any) {
@@ -83,8 +88,7 @@ class SpeechDetectionViewController: UIViewController {
     @IBAction func repeatButton(_ sender: Any) {
         self.multipeerService.send(message: "REPEAT_BUTTON")
     }
-    
-    
+
 //MARK: - Check Authorization Status
 
     func requestSpeechAuthorization() {
