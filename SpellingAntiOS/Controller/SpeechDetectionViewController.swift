@@ -66,7 +66,6 @@ class SpeechDetectionViewController: UIViewController {
         isRecording = true
         listeningFeedback.text = "LISTENING"
         audioTranscriptionService.recordAndRecognizeSpeech(completion: { finalString in
-            self.detectedTextLabel.text = finalString
             self.multipeerService.send(message: finalString)
         })
         
