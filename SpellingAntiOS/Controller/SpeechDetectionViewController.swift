@@ -57,7 +57,9 @@ class SpeechDetectionViewController: UIViewController {
     
 //MARK: IBActions and Cancel
     
-    @IBAction func stopButtonTapped(_ sender: Any) {
+    @IBAction func startButtonTapped(_ sender: Any) {
+        self.multipeerService.send(message: "START_OF_SPEECH")
+
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(SpeechDetectionViewController.addPulse), userInfo: nil, repeats: true)
         speechButton.setImage(#imageLiteral(resourceName: "Ditation-selected"), for: .normal)
@@ -70,7 +72,7 @@ class SpeechDetectionViewController: UIViewController {
         
     }
     
-    @IBAction func startButtonTapped(_ sender: UIButton) {
+    @IBAction func stopButtonTapped(_ sender: UIButton) {
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         timer.invalidate()
         speechButton.setImage(#imageLiteral(resourceName: "Ditation"), for: .normal)
