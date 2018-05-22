@@ -36,7 +36,7 @@ class SpeechDetectionViewController: UIViewController {
     @objc func addPulse(){
         let pulse = Pulsing(numberOfPulses: 1, radius: 150, position: beeImage.center)
         pulse.animationDuration = 0.8
-        pulse.backgroundColor = UIColor.orange.cgColor
+        pulse.backgroundColor = UIColor.white.cgColor
         
         self.view.layer.insertSublayer(pulse, below: beeImage.layer)
     }
@@ -64,19 +64,18 @@ class SpeechDetectionViewController: UIViewController {
 
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(SpeechDetectionViewController.addPulse), userInfo: nil, repeats: true)
-        speechButton.setImage(#imageLiteral(resourceName: "Ditation-selected"), for: .normal)
+        speechButton.setImage(#imageLiteral(resourceName: "Ditation white selected"), for: .normal)
         isRecording = true
         listeningFeedback.text = "LISTENING"
         audioTranscriptionService.recordAndRecognizeSpeech(completion: { finalString in
             self.multipeerService.send(message: finalString)
         })
-        
     }
     
     @IBAction func stopButtonTapped(_ sender: UIButton) {
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         timer.invalidate()
-        speechButton.setImage(#imageLiteral(resourceName: "Ditation"), for: .normal)
+        speechButton.setImage(#imageLiteral(resourceName: "Ditation white"), for: .normal)
         isRecording = false
         audioTranscriptionService.cancelRecording()
         listeningFeedback.text = "Tap button to start voice recognition!"
