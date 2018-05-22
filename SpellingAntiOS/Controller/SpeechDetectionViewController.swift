@@ -11,7 +11,6 @@ import AudioToolbox
 
 class SpeechDetectionViewController: UIViewController {
 
-    @IBOutlet weak var detectedTextLabel: UILabel!
     @IBOutlet weak var speechButton: UIButton!
     @IBOutlet weak var listeningFeedback: UILabel!
     @IBOutlet weak var beeImage: UIImageView!
@@ -92,6 +91,9 @@ class SpeechDetectionViewController: UIViewController {
         self.multipeerService.send(message: "REPEAT_BUTTON")
     }
 
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    }
 //MARK: - Check Authorization Status
 
     func requestSpeechAuthorization() {
@@ -103,13 +105,13 @@ class SpeechDetectionViewController: UIViewController {
                     self.speechButton.isEnabled = true
                 case .denied:
                     self.speechButton.isEnabled = false
-                    self.detectedTextLabel.text = "User denied access to speech recognition"
+                    self.showAlert(title: "Permission denied", message: "User denied access to speech recognition.")
                 case .restricted:
                     self.speechButton.isEnabled = false
-                    self.detectedTextLabel.text = "Speech recognition restricted on this device"
+                    self.showAlert(title: "Speech recognition unavailable", message: "Speech recognition restricted on this device.")
                 case .notDetermined:
                     self.speechButton.isEnabled = false
-                    self.detectedTextLabel.text = "Speech recognition not yet authorized"
+                    self.showAlert(title: "Speech recognition unauthorized", message: "Speech recognition not yet authorized.")
                 }
             }
         }
