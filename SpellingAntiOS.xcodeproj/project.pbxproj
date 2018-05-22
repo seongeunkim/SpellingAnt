@@ -30,6 +30,7 @@
 		126BF46820A5D3D500F5FBFA /* AudioTranscriptionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioTranscriptionService.swift; sourceTree = "<group>"; };
 		126BF46920A5D3D500F5FBFA /* SpeechDetectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechDetectionViewController.swift; sourceTree = "<group>"; };
 		126BF46C20A5D9DF00F5FBFA /* MultipeerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipeerService.swift; sourceTree = "<group>"; };
+		12A82A4420B47F12001EA478 /* SpellingAntiOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpellingAntiOS.entitlements; sourceTree = "<group>"; };
 		CBC8242620AB3CB70045B83C /* KDCIrcularProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDCIrcularProgress.swift; sourceTree = "<group>"; };
 		CBC8242920AB58800045B83C /* Pulsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pulsing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +65,7 @@
 		126BF45220A5D31E00F5FBFA /* SpellingAntiOS */ = {
 			isa = PBXGroup;
 			children = (
+				12A82A4420B47F12001EA478 /* SpellingAntiOS.entitlements */,
 				126BF45320A5D31E00F5FBFA /* AppDelegate.swift */,
 				126BF45D20A5D31E00F5FBFA /* Assets.xcassets */,
 				126BF46220A5D31E00F5FBFA /* Info.plist */,
@@ -152,6 +154,14 @@
 					126BF44F20A5D31E00F5FBFA = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -334,11 +344,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpellingAntiOS/SpellingAntiOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KYTAYKS6H2;
+				DEVELOPMENT_TEAM = 6MTLA429XS;
 				INFOPLIST_FILE = SpellingAntiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.org.eldorado.SpellingAntiOS;
+				PRODUCT_BUNDLE_IDENTIFIER = br.org.KimBiaClaraRick.SpellingAntiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -349,11 +360,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpellingAntiOS/SpellingAntiOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KYTAYKS6H2;
+				DEVELOPMENT_TEAM = 6MTLA429XS;
 				INFOPLIST_FILE = SpellingAntiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.org.eldorado.SpellingAntiOS;
+				PRODUCT_BUNDLE_IDENTIFIER = br.org.KimBiaClaraRick.SpellingAntiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
