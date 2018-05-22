@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,9 +36,38 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZSE-FK-UvF">
-                                <rect key="frame" x="157" y="554" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bee mic" translatesAutoresizingMaskIntoConstraints="NO" id="Ed1-pk-jPw">
+                                <rect key="frame" x="124" y="267" width="127" height="132"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="0Kf-tl-PXC"/>
+                                    <constraint firstAttribute="width" secondItem="Ed1-pk-jPw" secondAttribute="height" multiplier="127:132" id="YwQ-0n-UDQ"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2X-UG-xJK">
+                                <rect key="frame" x="80" y="137.5" width="65" height="84.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="H2X-UG-xJK" secondAttribute="height" multiplier="10:13" id="dy4-AK-q80"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="hint"/>
+                                <connections>
+                                    <action selector="hintButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cz3-o9-EbX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqJ-ht-nQO">
+                                <rect key="frame" x="230" y="133.5" width="65" height="84.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xqJ-ht-nQO" secondAttribute="height" multiplier="10:13" id="doR-E9-A68"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="repeat"/>
+                                <connections>
+                                    <action selector="repeatButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lyy-74-ru4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZSE-FK-UvF">
+                                <rect key="frame" x="151.5" y="553" width="72" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ZSE-FK-UvF" secondAttribute="height" multiplier="61:63" id="shG-Pu-wew"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="Ditation"/>
                                 <connections>
                                     <action selector="startButtonTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="t5Q-Mk-zuY"/>
@@ -45,34 +75,27 @@
                                     <action selector="stopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="9KL-LA-UZd"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bee mic" translatesAutoresizingMaskIntoConstraints="NO" id="Ed1-pk-jPw">
-                                <rect key="frame" x="124" y="267" width="127" height="132"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2X-UG-xJK">
-                                <rect key="frame" x="78" y="143" width="66" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="hint"/>
-                                <connections>
-                                    <action selector="hintButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cz3-o9-EbX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqJ-ht-nQO">
-                                <rect key="frame" x="230" y="143" width="67" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="repeat"/>
-                                <connections>
-                                    <action selector="repeatButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lyy-74-ru4"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="H2X-UG-xJK" firstAttribute="trailing" secondItem="Ed1-pk-jPw" secondAttribute="trailing" constant="-106" id="1zN-EK-5By"/>
+                            <constraint firstItem="Ed1-pk-jPw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G2E-EE-GKg"/>
+                            <constraint firstItem="H2X-UG-xJK" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:8" constant="1" id="IPP-CB-4J0"/>
                             <constraint firstItem="5dY-bZ-5TA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TfI-aO-8Hr"/>
+                            <constraint firstItem="xqJ-ht-nQO" firstAttribute="leading" secondItem="Ed1-pk-jPw" secondAttribute="leading" constant="106" id="WbS-rb-a60"/>
+                            <constraint firstItem="xqJ-ht-nQO" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:8" constant="1" id="YED-ow-OYW"/>
+                            <constraint firstItem="ZSE-FK-UvF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a84-Xx-90O"/>
+                            <constraint firstItem="Ed1-pk-jPw" firstAttribute="top" secondItem="xqJ-ht-nQO" secondAttribute="bottom" constant="49" id="aQO-2h-7g1"/>
                             <constraint firstItem="1z8-1k-eic" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="ads-vV-OYV"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xqJ-ht-nQO" secondAttribute="trailing" constant="20" symbolic="YES" id="b5X-Xf-mCn"/>
+                            <constraint firstItem="Ed1-pk-jPw" firstAttribute="top" secondItem="H2X-UG-xJK" secondAttribute="bottom" constant="45" id="cNW-Rh-3rq"/>
                             <constraint firstItem="1z8-1k-eic" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cyD-Ih-anf"/>
+                            <constraint firstItem="Ed1-pk-jPw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="d4k-Xc-Qoe"/>
+                            <constraint firstItem="H2X-UG-xJK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="d55-Sd-cP6"/>
+                            <constraint firstItem="ZSE-FK-UvF" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="gmM-IW-W13"/>
                             <constraint firstItem="1z8-1k-eic" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="h3r-ND-LH5"/>
                             <constraint firstItem="1z8-1k-eic" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.95" id="kcy-a4-BC5"/>
+                            <constraint firstItem="ZSE-FK-UvF" firstAttribute="top" secondItem="Ed1-pk-jPw" secondAttribute="bottom" constant="154" id="mA3-uK-DnQ"/>
                             <constraint firstItem="5dY-bZ-5TA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.2" id="yIA-u4-8Mw"/>
                         </constraints>
                     </view>

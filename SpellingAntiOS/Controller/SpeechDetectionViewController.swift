@@ -28,6 +28,8 @@ class SpeechDetectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.speechButton.contentMode = .scaleAspectFit
+        self.speechButton.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
         self.requestSpeechAuthorization()
     }
     
