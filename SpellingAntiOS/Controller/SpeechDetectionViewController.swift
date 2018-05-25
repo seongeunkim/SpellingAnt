@@ -41,22 +41,6 @@ class SpeechDetectionViewController: UIViewController {
         self.view.layer.insertSublayer(pulse, below: beeImage.layer)
     }
     
-    func initProgressCircle(){
-        progress = KDCircularProgress(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
-        progress.startAngle = -90
-        progress.progressThickness = 0.2
-        progress.trackThickness = 0.6
-        progress.clockwise = true
-        progress.gradientRotateSpeed = 2
-        progress.roundedCorners = false
-        progress.glowMode = .forward
-        progress.glowAmount = 0.9
-        progress.set(colors: UIColor.cyan ,UIColor.white, UIColor.magenta, UIColor.white, UIColor.orange)
-        progress.center = CGPoint(x: view.center.x, y: view.center.y + 25)
-        progress.trackColor = .lightGray
-        view.addSubview(progress)
-    }
-    
 //MARK: IBActions and Cancel
     
     @IBAction func startButtonTapped(_ sender: Any) {
@@ -111,6 +95,7 @@ class SpeechDetectionViewController: UIViewController {
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
     }
+    
 //MARK: - Check Authorization Status
 
     func requestSpeechAuthorization() {
@@ -145,8 +130,6 @@ class SpeechDetectionViewController: UIViewController {
                 case AVAudioSessionRecordPermission.undetermined:
                     self.speechButton.tag = 0
                     print("Request permission here")
-                default:
-                    break
                 }
             }
         }
