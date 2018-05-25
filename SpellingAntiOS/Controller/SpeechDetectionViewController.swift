@@ -61,6 +61,17 @@ class SpeechDetectionViewController: UIViewController {
     @IBAction func startButtonTapped(_ sender: Any) {
         self.multipeerService.send(message: "START_OF_SPEECH")
 
+        if self.speechButton.tag == 1 {
+            startRecording()
+        } else {
+            self.requestSpeechAuthorization()
+        }
+        
+    }
+    
+    func startRecording() {
+        self.multipeerService.send(message: "START_OF_SPEECH")
+        
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(SpeechDetectionViewController.addPulse), userInfo: nil, repeats: true)
         speechButton.setImage(#imageLiteral(resourceName: "Ditation white selected"), for: .normal)
@@ -92,6 +103,12 @@ class SpeechDetectionViewController: UIViewController {
 
     func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (action:UIAlertAction) in
+            print("You've pressed ok");
+        }
+
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 //MARK: - Check Authorization Status
 
@@ -101,15 +118,15 @@ class SpeechDetectionViewController: UIViewController {
             OperationQueue.main.addOperation {
                 switch authStatus {
                 case .authorized:
-                    self.speechButton.isEnabled = true
+                    self.speechButton.tag = 1
                 case .denied:
-                    self.speechButton.isEnabled = false
+                    self.speechButton.tag = 0
                     self.showAlert(title: "Permission denied", message: "User denied access to speech recognition.")
                 case .restricted:
-                    self.speechButton.isEnabled = false
+                    self.speechButton.tag = 0
                     self.showAlert(title: "Speech recognition unavailable", message: "Speech recognition restricted on this device.")
                 case .notDetermined:
-                    self.speechButton.isEnabled = false
+                    self.speechButton.tag = 0
                     self.showAlert(title: "Speech recognition unauthorized", message: "Speech recognition not yet authorized.")
                 }
             }
