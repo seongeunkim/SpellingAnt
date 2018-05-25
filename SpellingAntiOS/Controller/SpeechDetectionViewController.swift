@@ -88,7 +88,7 @@ class SpeechDetectionViewController: UIViewController {
         speechButton.setImage(#imageLiteral(resourceName: "Ditation white"), for: .normal)
         isRecording = false
         audioTranscriptionService.cancelRecording()
-        listeningFeedback.text = "Tap button to start voice recognition!"
+        listeningFeedback.text = "Hold the mic button to start spelling!"
         
         self.multipeerService.send(message: "END_OF_SPEECH")
     }

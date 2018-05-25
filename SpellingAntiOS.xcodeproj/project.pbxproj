@@ -64,7 +64,6 @@
 		126BF45220A5D31E00F5FBFA /* SpellingAntiOS */ = {
 			isa = PBXGroup;
 			children = (
-				12A82A4420B47F12001EA478 /* SpellingAntiOS.entitlements */,
 				126BF45320A5D31E00F5FBFA /* AppDelegate.swift */,
 				126BF45D20A5D31E00F5FBFA /* Assets.xcassets */,
 				126BF46220A5D31E00F5FBFA /* Info.plist */,
@@ -155,7 +154,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.iCloud = {
 								enabled = 0;
@@ -343,9 +342,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = SpellingAntiOS/SpellingAntiOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6MTLA429XS;
+				DEVELOPMENT_TEAM = GJ5VL7QF9C;
 				INFOPLIST_FILE = SpellingAntiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.org.KimBiaClaraRick.SpellingAntiOS;
@@ -359,9 +357,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = SpellingAntiOS/SpellingAntiOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6MTLA429XS;
+				DEVELOPMENT_TEAM = GJ5VL7QF9C;
 				INFOPLIST_FILE = SpellingAntiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.org.KimBiaClaraRick.SpellingAntiOS;
