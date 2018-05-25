@@ -21,9 +21,7 @@ class SpeechDetectionViewController: UIViewController {
     let audioTranscriptionService = AudioTranscriptionService()
     
     let multipeerService = MultipeerService()
-    
-    var progress = KDCircularProgress()
-    
+        
     var timer = Timer()
     
     override func viewDidLoad() {
@@ -133,8 +131,6 @@ class SpeechDetectionViewController: UIViewController {
                 }
             }
         }
-        
-        
     }
     
 //MARK: - Alert
