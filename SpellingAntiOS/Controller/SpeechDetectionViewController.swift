@@ -8,6 +8,7 @@
 
 import UIKit
 import AudioToolbox
+import AVFoundation
 
 class SpeechDetectionViewController: UIViewController {
 
@@ -119,18 +120,38 @@ class SpeechDetectionViewController: UIViewController {
                 switch authStatus {
                 case .authorized:
                     self.speechButton.tag = 1
+                    self.speechButton.isEnabled = true
                 case .denied:
                     self.speechButton.tag = 0
-                    self.showAlert(title: "Permission denied", message: "User denied access to speech recognition.")
+                    self.speechButton.isEnabled = false
+                    self.showAlert(title: "Permission denied", message: "User denied access to speech recognition. Please go to Settings > Spelling B and habilitate it!")
                 case .restricted:
                     self.speechButton.tag = 0
+                    self.speechButton.isEnabled = false
                     self.showAlert(title: "Speech recognition unavailable", message: "Speech recognition restricted on this device.")
                 case .notDetermined:
                     self.speechButton.tag = 0
+                    self.speechButton.isEnabled = false
                     self.showAlert(title: "Speech recognition unauthorized", message: "Speech recognition not yet authorized.")
+                }
+                
+                switch AVAudioSession.sharedInstance().recordPermission() {
+                case AVAudioSessionRecordPermission.granted:
+                    self.speechButton.tag = 1
+                    print("Permission granted")
+                case AVAudioSessionRecordPermission.denied:
+                    self.speechButton.tag = 0
+                    print("Pemission denied")
+                case AVAudioSessionRecordPermission.undetermined:
+                    self.speechButton.tag = 0
+                    print("Request permission here")
+                default:
+                    break
                 }
             }
         }
+        
+        
     }
     
 //MARK: - Alert
